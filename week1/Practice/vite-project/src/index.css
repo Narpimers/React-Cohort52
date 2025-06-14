@@ -1,0 +1,78 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.user-data {
+  margin-left: 5rem;
+  margin-top: 2.5rem;
+}
+
+.user-avatar{ 
+  width: 20rem;
+  height: auto;
+}
+
+.user-name {
+  color: hsl(205, 43%, 64%);
+  font-size: 3rem;
+}
+
+.user {
+  margin-bottom: 2rem;
+}
+
+.users {
+  background-color: hsl(206, 57%, 49%);
+  width: 40%;
+  margin-left: 3rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+.my-input {
+  text-align: center;
+  margin: 2rem;
+}
+
+.challenge4 {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.challenge5 {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.challenge6 {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.my-box {
+  margin: auto;
+  width: 10rem;
+  height: 10rem;
+  background-color: hsl(39, 76%, 52%);
+}
+
+input {
+  width: 4rem;
+  height: 2rem;
+  margin: 1rem;
+}
