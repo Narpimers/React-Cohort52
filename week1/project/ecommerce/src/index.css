@@ -12,6 +12,11 @@ html {
     background-color: hsl(0, 0%, 90%);
 }
 
+.category:hover {
+    background-color: hsl(218, 72%, 71%);
+    cursor: pointer;
+}
+
 .category-bar ul {
   display: flex;
   flex-direction: row; 
@@ -21,7 +26,7 @@ html {
  
 }
 
-h1 {
+.cap {
     font-size: 4rem;
     margin: 2rem;
 }
@@ -33,11 +38,6 @@ li {
     display: list-item;
     list-style: none;
     
-}
-
-li:hover {
-    background-color: hsl(0, 0%, 85%);
-    cursor: pointer;
 }
 
 .products {

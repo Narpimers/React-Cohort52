@@ -1,9 +1,12 @@
-import Navbar from './Navbar.jsx';
-import AllProducts from './all-products.jsx';
+import ProductPage from './Navbar.jsx';
 function App() {
 
   return (
-    <Navbar></Navbar>
+    <>
+    <h1 className="cap">Products</h1>
+    <ProductPage/>
+    </>
+    
   )
 }
 

@@ -1,4 +1,4 @@
-function AllProducts({ products, filter = null}) {
+function Products({ products, filter = null}) {
     const filteredProducts = filter
         ? products.filter(product => product.category === filter)
         : products;
@@ -17,4 +17,4 @@ function AllProducts({ products, filter = null}) {
     );
 }
 
-export default AllProducts;
+export default Products;
