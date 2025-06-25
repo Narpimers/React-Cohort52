@@ -7,13 +7,22 @@ function CategoryBar({ items, selectedCategory, onSelectCategory }) {
   return (
     <div className="category-bar">
       <ul className="category-list">
-        {items.map((item, index) => (
-          <li key={index} className="category"
-            onClick={() => {
-              const cleanCategory = item.replace(/^FAKE:\s*/, "");
-              onSelectCategory(selectedCategory === cleanCategory ? null : cleanCategory);
-            }}>{item}</li>
-        ))}
+        {items.map((item, index) => {
+          const cleanCategory = item.replace(/^FAKE:\s*/, "");
+          const isSelected = selectedCategory === cleanCategory;
+
+          return (
+            <li
+              key={index}
+              className={`category ${isSelected ? "selected" : ""}`}
+              onClick={() =>
+                onSelectCategory(isSelected ? null : cleanCategory)
+              }
+            >
+              {item}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

@@ -17,6 +17,12 @@ html {
     cursor: pointer;
 }
 
+.category.selected {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
 .category-bar ul {
   display: flex;
   flex-direction: row; 
