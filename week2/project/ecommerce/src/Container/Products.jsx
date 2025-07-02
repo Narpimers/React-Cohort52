@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-function Products({ products, filter = null }) {
-  const filteredProducts = filter
-    ? products.filter(product => product.category === filter)
-    : products;
+function Products({ products = [] }) {
+  if (!products.length) {
+    return <p className="error">No products found.</p>;
+  }
 
   return (
     <ul className="products">
-      {filteredProducts.map(product => (
+      {products.map(product => (
         <li key={product.id} className="product-item">
           <div className="product">
             <Link to={`/product/${product.id}`}>

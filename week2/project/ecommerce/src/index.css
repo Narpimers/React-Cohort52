@@ -18,8 +18,8 @@ html {
 }
 
 .category.selected {
-  background-color: #007bff;
-  color: white;
+  background-color: hsl(210, 100%, 50%);
+  color: hsl(0, 0%, 100%);
   font-weight: bold;
 }
 
@@ -32,9 +32,15 @@ html {
  
 }
 
+.category-list {
+  display: flex;
+  justify-content: center;
+}
+
 .cap {
     font-size: 4rem;
     margin: 2rem;
+    text-align: center;
 }
 
 li {
@@ -72,7 +78,7 @@ li {
 }
 
 .loading {
-  color: #007bff;
+  color: hsl(210, 100%, 50%);
   text-align: center;
   font-size: 3rem;
   padding: 2rem;
@@ -84,15 +90,15 @@ li {
   max-width: 800px;
   margin: 3rem auto;
   padding: 3rem;
-  border: 1px solid #ddd;
+  border: 1px solid hsl(0, 0%, 87%);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  background-color: #fff;
+  box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.05);
+  background-color: hsl(0, 0%, 100%);
   text-align: center;
 }
 
 .product-details img {
-  max-width: 250px;
+  max-width: 300px;
   height: auto;
   object-fit: contain;
   margin-bottom: 2.5rem;
@@ -101,13 +107,13 @@ li {
 .product-details h2 {
   font-size: 2.8rem;
   margin-bottom: 2rem;
-  color: #333;
+  color: hsl(0, 0%, 20%);
 }
 
 .product-details p {
   font-size: 2rem;
   line-height: 2.6;
-  color: #555;
+  color: hsl(0, 0%, 33%);
 }
 
 .back-link {
@@ -115,13 +121,20 @@ li {
   font-size: 3rem;
   margin-top: 1.5rem;
   text-decoration: none;
-  color: #007bff;
+  color: hsl(210, 100%, 50%);
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .back-link:hover {
-  color: #0056b3;
+  color: hsl(211, 100%, 35%);
+}
+
+.error {
+  color: hsl(15, 80%, 36%);
+  text-align: center;
+  font-size: 3rem;
+  padding: 5rem;
 }
 
 @keyframes pulse {

@@ -1,23 +1,28 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import fetcher from "./data/fetcher.js"; 
-
+import fetcher from "../data/fetcher.js";
 
 function ProductDetails() {
   const { id } = useParams(); 
   const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetcher(`https://fakestoreapi.com/products/${id}`)
+      .then(setLoading(true))
       .then(data => setProduct(data))
-      .catch(err => console.error("Error when getting Product:", err))
+      .catch(err => {
+        console.error("Error when receiving the product:", err);
+        setError("Couldn't upload the product");
+      })
       .finally(() => setLoading(false));
   }, [id]);
 
   if (loading) return <div className="loading">Loading...</div>;
-  if (!product) return <div>Product is not fined</div>;
+  if (error) return <div className="error">{error}</div>;
+  if (!product) return <div>Product not found</div>;
 
   return (
     <div className="product-details">
@@ -25,9 +30,12 @@ function ProductDetails() {
       <img
         src={product.image}
         alt={product.title}
-        style={{ maxWidth: "300px", marginBottom: "1rem" }}
+        className="product-image"
       />
-      <p>{product.description}</p>
+      <p className="product-description">{product.description}</p>
+      <p className="product-price">
+        <strong>Price:</strong> ${product.price.toFixed(2)}
+      </p>
       <Link to="/" className="back-link">Back</Link>
     </div>
   );
