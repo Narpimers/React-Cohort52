@@ -19,7 +19,7 @@ function HomePage() {
     : (allItems || []);
 
   if (error) {
-    return <div className="error">Data upload error: {error.message || String(error)}</div>;
+    return <div className="error">Failed to load data: {error.message || String(error)}</div>;
   }
 
   return (

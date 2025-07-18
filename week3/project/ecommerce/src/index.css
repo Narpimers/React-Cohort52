@@ -122,6 +122,7 @@ li {
   box-shadow: 0 4px 10px hsla(0, 0%, 0%, 0.05);
   background-color: hsl(0, 0%, 100%);
   text-align: center;
+  position: relative;
 }
 
 .product-details img {
@@ -166,12 +167,20 @@ li {
   padding: 5rem;
 }
 
-.fav-icon {
+.fav-button {
+  background: none;
+  border: none;
+  padding: 0;
   cursor: pointer;
   width: 2.5rem;
   position: absolute;
   top: 1rem;    
   right: 1rem;  
+}
+
+.fav-button-details {
+  top: 20rem;    
+  right: 20rem; 
 }
 
 .no-favorites {

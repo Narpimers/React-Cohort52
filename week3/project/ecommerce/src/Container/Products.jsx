@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import FavIcon from "./FavIcon";
+import FavButton from "./FavButton";
 
 function Products({ products = [] }) {
 
@@ -19,7 +19,7 @@ function Products({ products = [] }) {
                 className="product-image"
               />
             </Link>
-            <FavIcon productId={product.id} />
+            <FavButton productId={product.id} />
             <span>{product.title}</span>
           </div>
         </li>

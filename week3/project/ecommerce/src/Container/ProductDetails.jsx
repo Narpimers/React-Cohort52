@@ -1,31 +1,21 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import fetcher from "../data/fetcher.js";
 import NavBar from "./NavBar.jsx";
+import FavButton from "./FavButton.jsx";
+import useFetch from "../assets/hooks/useFetch.jsx";
 
 function ProductDetails() {
   const { id } = useParams(); 
-  const [product, setProduct] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetcher(`https://fakestoreapi.com/products/${id}`)
-      .then(setLoading(true))
-      .then(data => setProduct(data))
-      .catch(err => {
-        console.error("Error when receiving the product:", err);
-        setError("Couldn't upload the product");
-      })
-      .finally(() => setLoading(false));
-  }, [id]);
+
+  const {data: product, loading, error } = useFetch(`https://fakestoreapi.com/products/${id}`)
 
   if (loading) return <div className="loading">Loading...</div>;
   if (error) {
     return (
       <div className="error">
-        {error}
+        <p>Product not found.</p>
+        <p>{error.message}</p>
         <Link to="/" className="back-link">⬅️</Link>
       </div>
     );
@@ -46,6 +36,7 @@ function ProductDetails() {
         <p className="product-price">
           <strong>Price:</strong> ${product.price.toFixed(2)}
         </p>
+        <FavButton productId={product.id} />
       </div>
     </>
   );

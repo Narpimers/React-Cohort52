@@ -4,7 +4,7 @@ import heartSolid from '../assets/heart-solid.svg';
 import { useContext } from 'react';
 import { FavoritesContext } from '../Context/FavoritesContext';
 
-const FavIcon = ({ productId }) => {
+const FavButton = ({ productId }) => {
   const [favorites, setFavorites] = useContext(FavoritesContext);
 
   const isFavorite = favorites.includes(productId);
@@ -18,13 +18,13 @@ const FavIcon = ({ productId }) => {
   };
 
   return (
-    <img
-      className="fav-icon"
-      src={isFavorite ? heartSolid : heartRegular}
-      onClick={handleFavIcon}
-      alt="favorite-icon"
-    />
+    <button onClick={handleFavIcon} className="fav-button">
+      <img        
+        src={isFavorite ? heartSolid : heartRegular}
+        alt="fav-button"
+      />
+    </button>
   );
 };
 
-export default FavIcon;
+export default FavButton;
